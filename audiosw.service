@@ -1,0 +1,16 @@
+# 
+# Raspbery PI Audio Amplifier Switch Systemd Service file
+#
+
+[Unit]
+Description=Audio Amplifier Switch
+After=sound.target
+[Install]
+WantedBy=multi-user.target
+[Service]
+Type=simple
+User=root
+PermissionsStartOnly=true
+ExecStart=/usr/local/bin/audiosw.sh
+Restart=on-failure
+TimeoutSec=30 
